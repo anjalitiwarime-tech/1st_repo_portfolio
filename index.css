@@ -1,0 +1,148 @@
+* {
+    font-family: "Satisfy", cursive;
+    color: #ffffff;
+
+}
+
+body {
+
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to left, #47033e, #2e2774);
+
+}
+
+.ofcan {
+    margin: 0;
+    background: linear-gradient(to left, #47033e, #2e2774);
+}
+
+
+.header-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .header-2 h6:hover{
+  border: 1px solid transparent;
+  border-radius: 40px;
+  padding: 8px;
+  background-color: #ffffff;
+  color: #272727;
+  width: 80px;
+  text-align: center;
+} */
+
+.nav {
+    background-color: #272727;
+
+}
+
+.nav-logo {
+    margin-left: 105px;
+    margin-top: 8px;
+    font-size: x-large;
+    background: linear-gradient(to left, #47033e, #2e2774);
+}
+
+.img {
+    border: 1px solid lightskyblue;
+    box-shadow: 0 0 10px rgb(121, 183, 222);
+
+}
+
+.icon {
+    font-size: 22px;
+}
+
+.connect {
+    color: #ffffff;
+    position: relative;
+    left: 120px;
+    margin-top: 25px;
+    border: 1px solid gray;
+    padding: 7px;
+}
+
+.connect:hover {
+    color: #272727;
+    background-color: #ffffff;
+}
+
+.first-sec {
+    margin: 80px 100px;
+}
+
+.intro {
+    background-image: linear-gradient(to right, #007fff, #00f0ff);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 45px;
+}
+
+.intro span {
+    color: blueviolet;
+}
+
+#element {
+    /* color: blueviolet;
+    font-size: 45px;
+    background-image: linear-gradient(to left, gray, orange);
+    -webkit-background-clip: text;
+    color: transparent; */
+}
+
+#element {
+    color: #fff;
+    font-size: 40px;
+    text-shadow:
+        0 0 5px #08158c,
+        0 0 10px #00f0ff,
+        0 0 20px #0f52ba,
+        0 0 40px #191970;
+}
+
+.intro span {
+    /* background-image: linear-gradient(to left, gray, orange);
+    -webkit-background-clip: text;
+    color: transparent;     */
+}
+
+.intro span {
+    color: #fff;
+    font-size: 48px;
+    text-shadow:
+        0 0 5px #08158c,
+        0 0 10px #00f0ff,
+        0 0 20px #0f52ba,
+        0 0 40px #191970;
+}
+
+
+.left-sec {
+    text-align: center;
+    align-content: center;
+}
+
+.right-sec {
+    align-items: center;
+    /* background-color: #272727; */
+}
+
+.me {
+
+    border: 2px solid rgb(34, 133, 166);
+    box-shadow: 0 0 10px #5566ff;
+    /* 0 0 10px #00f0ff,
+        0 0 20px #0f52ba,
+        0 0 40px #6b6bb7; */
+    border-radius: 50%;
+
+}
+
+.cv {
+    /* margin:0;
+    margin-left: 100px;
+    margin-right: 100px; */
+}
