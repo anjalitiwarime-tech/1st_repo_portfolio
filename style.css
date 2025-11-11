@@ -1,8 +1,10 @@
 * {
-    font-family: "Satisfy", cursive;
     color: #ffffff;
-
+    font-family: "Delius", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
+
 
 body {
 
@@ -24,15 +26,15 @@ body {
     align-items: center;
 }
 
-/* .header-2 h6:hover{
-  border: 1px solid transparent;
-  border-radius: 40px;
-  padding: 8px;
-  background-color: #ffffff;
-  color: #272727;
-  width: 80px;
-  text-align: center;
-} */
+.header-2 h6:hover {
+    border: 1px solid transparent;
+    border-radius: 40px;
+    padding: 8px;
+    background-color: #ffffff;
+    color: #272727;
+    width: 80px;
+    text-align: center;
+}
 
 .nav {
     background-color: #272727;
@@ -85,13 +87,13 @@ body {
     color: blueviolet;
 }
 
-/* #element { */
-    /* color: blueviolet;
+#element {
+    color: blueviolet;
     font-size: 45px;
     background-image: linear-gradient(to left, gray, orange);
-    -webkit-background-clip: text;
-    color: transparent; */
-/* } */
+    background-clip: text;
+    color: transparent;
+}
 
 #element {
     color: #fff;
@@ -103,11 +105,11 @@ body {
         0 0 40px #191970;
 }
 
-/* .intro span { */
-    /* background-image: linear-gradient(to left, gray, orange);
-    -webkit-background-clip: text;
-    color: transparent;     */
-/* } */
+.intro span {
+    background-image: linear-gradient(to left, gray, orange);
+    background-clip: text;
+    color: transparent;
+}
 
 .intro span {
     color: #fff;
@@ -141,8 +143,8 @@ body {
 
 }
 
-/* .cv { */
-    /* margin:0;
+.cv {
+    margin: 0;
     margin-left: 100px;
-    margin-right: 100px; */
-/* } */
+    margin-right: 100px;
+}
