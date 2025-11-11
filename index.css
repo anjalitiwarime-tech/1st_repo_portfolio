@@ -76,7 +76,7 @@ body {
 
 .intro {
     background-image: linear-gradient(to right, #007fff, #00f0ff);
-    -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
     font-size: 45px;
 }
@@ -85,13 +85,13 @@ body {
     color: blueviolet;
 }
 
-#element {
+/* #element { */
     /* color: blueviolet;
     font-size: 45px;
     background-image: linear-gradient(to left, gray, orange);
     -webkit-background-clip: text;
     color: transparent; */
-}
+/* } */
 
 #element {
     color: #fff;
@@ -103,11 +103,11 @@ body {
         0 0 40px #191970;
 }
 
-.intro span {
+/* .intro span { */
     /* background-image: linear-gradient(to left, gray, orange);
     -webkit-background-clip: text;
     color: transparent;     */
-}
+/* } */
 
 .intro span {
     color: #fff;
@@ -141,8 +141,8 @@ body {
 
 }
 
-.cv {
+/* .cv { */
     /* margin:0;
     margin-left: 100px;
     margin-right: 100px; */
-}
+/* } */
