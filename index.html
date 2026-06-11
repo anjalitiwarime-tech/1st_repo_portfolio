@@ -1,117 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#12082b" />
+    <meta
+      name="description"
+      content="Anjali Tiwari's recruiter-focused software engineering portfolio featuring React projects, Java, DSA, web development skills, experience, education, achievements, and resume."
+    />
+    <meta
+      name="keywords"
+      content="Anjali Tiwari, React Developer, Web Developer, Computer Science Engineering, Java, DSA, Portfolio, Software Engineer"
+    />
+    <meta name="author" content="Anjali Tiwari" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://anjalitiwarime-tech.github.io/1st_repo_portfolio/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="%BASE_URL%developer.webp" as="image" type="image/webp" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css" />
-    <!-- <link rel="stylesheet" href="css/media.css" /> -->
-    <title>Portfolio</title>
-</head>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Anjali Tiwari | Web Developer Portfolio" />
+    <meta
+      property="og:description"
+      content="Premium portfolio for Anjali Tiwari, Computer Science Engineering student, React developer, and problem solver."
+    />
+    <meta property="og:url" content="https://anjalitiwarime-tech.github.io/1st_repo_portfolio/" />
+    <meta property="og:image" content="https://anjalitiwarime-tech.github.io/1st_repo_portfolio/developer.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Anjali Tiwari | Web Developer Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Explore Anjali Tiwari's projects, skills, resume, and software development journey."
+    />
+    <meta name="twitter:image" content="https://anjalitiwarime-tech.github.io/1st_repo_portfolio/developer.webp" />
 
-<body>
-    <header class="container-fluid py-3 shadow-lg text-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5 gap-5 d-flex align-items-center justify-items-center">
-
-                    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop"
-                        aria-controls="staticBackdrop">
-                        <i class="text-primary fs-5 fa-solid fa-bars mb-3"></i>
-                    </button>
-                    <!-- for side navigation bar -->
-                    <div class="nav ofcan offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1"
-                        id="staticBackdrop" aria-labelledby="staticBackdropLabel">
-                        <div class="offcanvas-header">
-                            <h5 class=" nav-logo offcanvas-title " id="staticBackdropLabel">Anjali's Portfolio</h5>
-                            <button type="button" class="btn-close bg-primary" data-bs-dismiss="offcanvas"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class=" offcanvas-body align-items-center">
-
-                            <center><img class="img me m-0 p-0" src="developer.webp" width="150">
-                            </center>
-
-                            <center>
-                                <h6 class="mt-4">Specialization : <p>Computer Science Engineering</p>
-                                </h6>
-                                <h6 class="mt-3">Profesion : <p>passionate cse Student</p>
-                                </h6>
-                                <h6 class="mt-3">Work : <p>Web Development & Freelancing</p>
-                                </h6>
-                            </center>
-                            <div class="icon d-flex align-items-center justify-content-evenly mt-4 mx-5">
-                                <i class="fa-brands fa-linkedin-in text-primary"></i>
-                                <i class="fa-brands fa-facebook text-primary"></i>
-                                <i class="fa-brands fa-instagram text-primary"></i>
-                                <i class="fa-brands fa-whatsapp text-primary"></i>
-                            </div>
-                            <button type="button" class="connect btn rounded-pill">Let's Work Together!</button>
-
-                        </div>
-                    </div>
-
-
-                    <h3>Anjali's Portfolio</h3>
-                </div>
-                <div class="col-lg-7">
-                    <section class="header-2 ">
-                        <button type="button" class="btn btn-outline-light rounded-pill border-0">Home</botton>
-                            <button type="button" class="btn btn-outline-light rounded-pill border-0">About Me</botton>
-                                <button type="button" class="btn btn-outline-light rounded-pill border-0">Projects
-                                    </botton>
-                                    <button type="button" class="btn btn-outline-light rounded-pill border-0">Resume
-                                        </botton>
-                                        <button type="button"
-                                            class="btn btn-outline-light rounded-pill border-0">Contact</botton>
-                                            <button type="button"
-                                                class="btn btn-outline-light rounded-pill border-0">mode <i
-                                                    class="text-primary fa-solid fa-moon"></i></h6>
-                                                <button type="button"
-                                                    class="btn btn-outline-light rounded-pill border-0">Let's Talk <i
-                                                        class="text-primary fa-solid fa-comment-dots"></i></botton>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <section class="first-sec d-flex justify-content-around justify-items-center">
-            <div class="left-sec">
-                <div class="intro">Hey! I'm <span>Anjali</span><br>A passionate</div>
-                <span id="element"></span>
-            </div>
-
-            <div class="right-sec"><img class="me" src="developer.webp" alt="Developer Image"
-                    width="220px"></div>
-        </section>
-        <div class="cv d-flex justify-content-center justify-items-center mt-5 gap-5">
-            <button type="button" class="btn btn-outline-light rounded-pill p-1">My Works<i
-                    class="text-primary fa-solid fa-file"></i></botton>
-                <button type="button" class="btn btn-outline-light rounded-pill p-1">Download CV <i
-                        class="text-primary fa-solid fa-download"></i></botton>
-        </div>
-    </main>
-
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <!-- Setup and start animation! -->
-    <script>
-        var typed = new Typed('#element', {
-            strings: ['Web Developer', 'Video Editor', 'Freelancer', 'Web Developer'],
-            typeSpeed: 50,
-        });
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Anjali Tiwari",
+        "jobTitle": "Computer Science Engineering Student and Web Developer",
+        "email": "mailto:tiwarianjali5740@gmail.com",
+        "url": "https://anjalitiwarime-tech.github.io/1st_repo_portfolio/",
+        "sameAs": [
+          "https://tinyurl.com/2wtdb35n",
+          "https://tinyurl.com/n3jvr99m",
+          "https://leetcode.com/u/codewith_Anj609"
+        ],
+        "knowsAbout": [
+          "React.js",
+          "Java",
+          "Data Structures and Algorithms",
+          "Web Development",
+          "Prompt Engineering"
+        ]
+      }
     </script>
-</body>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
-    integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
-    crossorigin="anonymous"></script>
 
+    <title>Anjali Tiwari | React Developer Portfolio</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
