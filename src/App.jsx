@@ -59,12 +59,12 @@ const navItems = [
 const socialLinks = [
   {
     label: 'LinkedIn',
-    href: 'https://tinyurl.com/2wtdb35n',
+    href: 'https://www.linkedin.com/in/anjali-tiwari-542760310/',
     icon: FaLinkedinIn,
   },
   {
     label: 'GitHub',
-    href: 'https://tinyurl.com/n3jvr99m',
+    href: 'https://github.com/anjalitiwarime-tech',
     icon: FaGithub,
   },
   {
