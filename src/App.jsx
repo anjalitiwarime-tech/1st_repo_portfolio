@@ -935,6 +935,20 @@ function ContactForm() {
 export default function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem('portfolio-theme') || 'light');
   useEffect(() => { document.documentElement.dataset.theme = theme; localStorage.setItem('portfolio-theme', theme); }, [theme]);
+  useEffect(() => {
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      }),
+      { threshold: 0.12 },
+    );
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
   return <div id="top"><Header theme={theme} setTheme={setTheme} /><main>
     <section className="hero container"><p className="eyebrow">Aspiring Software Engineer</p><h1>Hi, I&apos;m Anjali Tiwari.</h1>
       <p className="hero-copy">I am a B.Tech Computer Science &amp; Engineering student at RGPV University, Bhopal. I am interested in Java, React.js, and building useful web applications with clean, responsive interfaces.</p>
