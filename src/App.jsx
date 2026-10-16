@@ -1,3 +1,4 @@
+/* Legacy implementation retained below for reference.
 import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import {
@@ -880,4 +881,72 @@ export default function App() {
       <Footer />
     </div>
   );
+}
+*/
+
+import { useEffect, useState } from 'react';
+import { FaBars, FaDownload, FaEnvelope, FaGithub, FaLinkedinIn, FaMoon, FaPhoneAlt, FaSun, FaTimes } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
+
+const resume = `${import.meta.env.BASE_URL}resume/Anjali_Resume_Jake.pdf`;
+const nav = [['About', 'about'], ['Skills', 'skills'], ['Experience', 'experience'], ['Projects', 'projects'], ['Education', 'education'], ['Certifications', 'certifications'], ['Contact', 'contact']];
+const skills = [
+  ['Programming Languages', ['C', 'C++', 'Java']],
+  ['Frontend Development', ['HTML5', 'CSS3', 'JavaScript', 'React.js', 'Bootstrap']],
+  ['Core Skills', ['Core Java', 'Web Development', 'Frontend Development', 'Responsive Web Design', 'Graphic Design']],
+  ['Tools', ['Git', 'GitHub', 'Visual Studio Code', 'Eclipse', 'Figma']],
+  ['Additional Tools', ['MS Word', 'MS Excel', 'PowerPoint', 'Canva Basics']],
+];
+const go = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+function Header({ theme, setTheme }) {
+  const [open, setOpen] = useState(false);
+  const pick = (id) => { go(id); setOpen(false); };
+  return <header className="site-header"><nav className="container nav" aria-label="Main navigation">
+    <button className="brand" type="button" onClick={() => pick('top')}>AT</button>
+    <div className="desktop-nav">{nav.map(([label, id]) => <button type="button" key={id} onClick={() => pick(id)}>{label}</button>)}</div>
+    <div className="nav-actions">
+      <button className="icon-button" type="button" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} aria-label="Toggle theme">{theme === 'light' ? <FaMoon /> : <FaSun />}</button>
+      <button className="menu-button" type="button" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Toggle navigation">{open ? <FaTimes /> : <FaBars />}</button>
+    </div>
+    {open && <div className="mobile-nav">{nav.map(([label, id]) => <button type="button" key={id} onClick={() => pick(id)}>{label}</button>)}</div>}
+  </nav></header>;
+}
+
+function Section({ id, title, children }) { return <section id={id} className="section container"><h2>{title}</h2>{children}</section>; }
+
+function ContactForm() {
+  const [status, setStatus] = useState('');
+  const send = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const name = data.get('name')?.trim(), email = data.get('email')?.trim(), subject = data.get('subject')?.trim(), message = data.get('message')?.trim();
+    if (!name || !email || !subject || !message) { setStatus('Please complete all fields before continuing.'); return; }
+    setStatus('Opening your email app with this message.');
+    window.location.href = `mailto:tiwarianjali5740@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+  };
+  return <form className="contact-form" onSubmit={send} noValidate>
+    <label>Name<input name="name" autoComplete="name" required /></label><label>Email<input name="email" type="email" autoComplete="email" required /></label>
+    <label>Subject<input name="subject" required /></label><label>Message<textarea name="message" rows="5" required /></label>
+    <button className="button" type="submit">Send via email</button>{status && <p className="form-message" role="status">{status}</p>}
+  </form>;
+}
+
+export default function App() {
+  const [theme, setTheme] = useState(() => localStorage.getItem('portfolio-theme') || 'light');
+  useEffect(() => { document.documentElement.dataset.theme = theme; localStorage.setItem('portfolio-theme', theme); }, [theme]);
+  return <div id="top"><Header theme={theme} setTheme={setTheme} /><main>
+    <section className="hero container"><p className="eyebrow">Aspiring Software Engineer</p><h1>Hi, I&apos;m Anjali Tiwari.</h1>
+      <p className="hero-copy">I am a B.Tech Computer Science &amp; Engineering student at RGPV University, Bhopal. I am interested in Java, React.js, and building useful web applications with clean, responsive interfaces.</p>
+      <div className="button-row"><button className="button" type="button" onClick={() => go('projects')}>View projects</button><button className="button button-secondary" type="button" onClick={() => go('contact')}>Contact me</button><a className="text-link" href={resume} download><FaDownload /> Download resume</a></div>
+      <div className="socials"><a href="https://github.com/anjalitiwarime-tech" target="_blank" rel="noreferrer"><FaGithub /> GitHub</a><a href="https://www.linkedin.com/in/anjali-tiwari-542760310/" target="_blank" rel="noreferrer"><FaLinkedinIn /> LinkedIn</a><a href="https://leetcode.com/u/codewith_Anj609" target="_blank" rel="noreferrer"><SiLeetcode /> LeetCode</a></div>
+    </section>
+    <Section id="about" title="About me"><p className="prose">I am pursuing a B.Tech in Computer Science &amp; Engineering at RGPV University, Bhopal. I enjoy learning software engineering and web development through practical projects, with a particular focus on Core Java and React.js. My internship experience has also introduced me to account management, CRM activities, and project execution.</p></Section>
+    <Section id="skills" title="Skills"><div className="skill-grid">{skills.map(([title, list]) => <article className="group" key={title}><h3>{title}</h3><div className="tags">{list.map((skill) => <span key={skill}>{skill}</span>)}</div></article>)}</div></Section>
+    <Section id="experience" title="Experience"><article className="entry"><div><p className="entry-meta">October 2025 - February 2026</p><h3>Intern - Mission Helping Hands</h3></div><div><p>Managed professional accounts and communicated with job seekers while supporting CRM activities and project execution.</p><ul><li>Organised job links, candidate emails, and seeker interactions.</li><li>Maintained structured records of opportunities and requests.</li><li>Coordinated incoming requests and forwarded relevant opportunities.</li></ul><p className="muted">Account Management · CRM · Project Execution · Communication</p></div></article></Section>
+    <Section id="projects" title="Projects"><div className="project-grid"><article className="project"><p className="entry-meta">In progress - Major project</p><h3>SkyFlew - Airline Website</h3><p>A modern airline website focused on responsive design, a user-friendly interface, flight search, and interactive components for a realistic booking-flow experience.</p><div className="tags"><span>React.js</span><span>JavaScript</span><span>HTML5</span><span>CSS3</span></div><div className="link-row"><a href="https://anjalitiwarime-tech.github.io/Demo-Air/" target="_blank" rel="noreferrer">Live demo</a><a href="https://github.com/anjalitiwarime-tech/Demo-Air" target="_blank" rel="noreferrer">Source code</a></div></article></div></Section>
+    <Section id="education" title="Education"><div className="education-list"><article><h3>RGPV University, Bhopal</h3><p>B.Tech in Computer Science &amp; Engineering</p><p className="muted">2024 - 2028 · Currently pursuing</p></article><article><h3>Higher Secondary (12th)</h3><p>State Board - Physics, Chemistry, Mathematics</p><p className="muted">2023 - 2024</p></article><article><h3>High School (10th)</h3><p>State Board</p><p className="muted">2021 - 2022</p></article></div></Section>
+    <Section id="certifications" title="Certifications"><article className="entry"><div><h3>Generative AI Certificate</h3><p className="muted">Analytics Vidhya</p></div><p>Completed a course covering Generative AI and its applications.</p></article></Section>
+    <Section id="contact" title="Contact"><div className="contact-layout"><div><p className="prose">I welcome internship opportunities and professional conversations. The form opens your email application so no message is sent without your confirmation.</p><a className="contact-item" href="mailto:tiwarianjali5740@gmail.com"><FaEnvelope /> tiwarianjali5740@gmail.com</a><a className="contact-item" href="tel:9201366055"><FaPhoneAlt /> 9201366055</a><p className="muted">Khargone, Madhya Pradesh, India</p></div><ContactForm /></div></Section>
+  </main><footer><div className="container footer-content"><div><strong>Anjali Tiwari</strong><p>Aspiring Software Engineer building useful web applications.</p></div><div><a href="mailto:tiwarianjali5740@gmail.com">Email</a>{nav.slice(0, 3).map(([label, id]) => <button type="button" key={id} onClick={() => go(id)}>{label}</button>)}</div><p>© {new Date().getFullYear()} Anjali Tiwari</p></div></footer></div>;
 }

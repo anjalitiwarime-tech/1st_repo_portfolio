@@ -1,3 +1,4 @@
+/* Legacy implementation retained below for reference.
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -20,7 +21,28 @@
   --nav-bg: rgba(7, 3, 17, 0.78);
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
 }
+*/
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --bg:#fafafa; --surface:#fff; --text:#1f2937; --muted:#5b6472; --line:#e5e7eb; --accent:#2563eb; --accent-soft:#eff6ff; color-scheme:light; }
+:root[data-theme='dark'] { --bg:#111827; --surface:#182230; --text:#f3f4f6; --muted:#c5cbd5; --line:#334155; --accent:#93c5fd; --accent-soft:#1e3a5f; color-scheme:dark; }
+* { box-sizing:border-box; } html { scroll-behavior:smooth; } body { margin:0; min-width:320px; color:var(--text); background:var(--bg); font:15px/1.65 Inter,ui-sans-serif,system-ui,sans-serif; }
+button,input,textarea { font:inherit; } a { color:var(--accent); } button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible { outline:3px solid color-mix(in srgb,var(--accent) 45%,transparent); outline-offset:2px; }
+.container { width:min(100% - 2rem,1100px); margin-inline:auto; }.site-header { position:sticky; top:0; z-index:10; border-bottom:1px solid var(--line); background:color-mix(in srgb,var(--bg) 94%,transparent); backdrop-filter:blur(8px); }.nav { min-height:62px; display:flex; align-items:center; gap:1rem; position:relative; }
+.brand { border:0; padding:0; color:var(--text); background:transparent; font-size:1.05rem; font-weight:750; cursor:pointer; }.desktop-nav { display:flex; flex:1; justify-content:center; gap:.15rem; }.desktop-nav button,footer button { border:0; padding:.45rem .55rem; color:var(--muted); background:transparent; cursor:pointer; font-size:.88rem; }.desktop-nav button:hover,footer button:hover { color:var(--accent); }.nav-actions { margin-left:auto; display:flex; gap:.4rem; }.icon-button,.menu-button { display:grid; place-items:center; width:34px; height:34px; border:1px solid var(--line); border-radius:6px; color:var(--text); background:var(--surface); cursor:pointer; }.menu-button,.mobile-nav { display:none; }
+.hero { padding:5rem 0 4rem; border-bottom:1px solid var(--line); }.eyebrow,.entry-meta { margin:0 0 .55rem; color:var(--accent); font-size:.78rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }h1,h2,h3,p { margin-top:0; }h1 { max-width:700px; margin-bottom:1rem; font-size:clamp(2rem,5vw,2.35rem); line-height:1.18; letter-spacing:-.035em; }h2 { margin-bottom:1.4rem; font-size:clamp(1.35rem,3vw,1.55rem); letter-spacing:-.02em; }h3 { margin-bottom:.5rem; font-size:1.05rem; line-height:1.35; }.hero-copy,.prose { max-width:700px; color:var(--muted); }
+.button-row,.socials,.link-row { display:flex; flex-wrap:wrap; align-items:center; gap:.7rem; }.button-row { margin-top:1.5rem; }.button { display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--accent); border-radius:6px; padding:.6rem .85rem; background:var(--accent); color:white; cursor:pointer; font-weight:650; text-decoration:none; }.button:hover { filter:brightness(.95); }.button-secondary { background:transparent; color:var(--accent); }.text-link,.socials a { display:inline-flex; align-items:center; gap:.35rem; font-size:.92rem; text-decoration:none; }.socials { margin-top:1.25rem; }
+.section { padding:3.5rem 0; border-bottom:1px solid var(--line); scroll-margin-top:60px; }.skill-grid,.project-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }.group,.project,.entry,.education-list article { border:1px solid var(--line); border-radius:7px; padding:1.1rem; background:var(--surface); }.tags { display:flex; flex-wrap:wrap; gap:.45rem; }.tags span { padding:.2rem .5rem; border-radius:4px; color:var(--accent); background:var(--accent-soft); font-size:.8rem; font-weight:600; }.entry { display:grid; grid-template-columns:minmax(190px,.7fr) 2fr; gap:1.5rem; }.entry ul { padding-left:1.2rem; }.muted,.project p { color:var(--muted); }.link-row { margin-top:1rem; }.link-row a { font-weight:650; }.education-list { display:grid; gap:.75rem; }.education-list article p { margin-bottom:.3rem; }
+.contact-layout { display:grid; grid-template-columns:.85fr 1.15fr; gap:2rem; }.contact-item { display:flex; align-items:center; gap:.55rem; margin:.9rem 0; color:var(--text); text-decoration:none; }.contact-item:hover { color:var(--accent); }.contact-form { display:grid; grid-template-columns:1fr 1fr; gap:.9rem; }.contact-form label { display:grid; gap:.35rem; font-size:.9rem; font-weight:650; }.contact-form label:nth-of-type(3),.contact-form label:nth-of-type(4),.contact-form .button,.form-message { grid-column:1/-1; }input,textarea { width:100%; padding:.6rem .65rem; border:1px solid var(--line); border-radius:5px; color:var(--text); background:var(--surface); }textarea { resize:vertical; }.form-message { margin:0; color:var(--muted); }
+footer { padding:2rem 0; }.footer-content { display:grid; grid-template-columns:1fr auto; gap:.75rem 2rem; color:var(--muted); font-size:.88rem; }.footer-content strong { color:var(--text); }.footer-content p { margin:.2rem 0; }.footer-content>p { grid-column:1/-1; }
+@media (max-width:800px) { .desktop-nav { display:none; }.menu-button { display:grid; }.mobile-nav { position:absolute; top:61px; right:0; left:0; display:grid; padding:.6rem 1rem 1rem; border-bottom:1px solid var(--line); background:var(--surface); box-shadow:0 8px 14px rgba(0,0,0,.06); }.mobile-nav button { padding:.65rem .2rem; border:0; border-bottom:1px solid var(--line); background:transparent; color:var(--text); text-align:left; cursor:pointer; }.skill-grid,.project-grid,.contact-layout { grid-template-columns:1fr; }.entry { grid-template-columns:1fr; gap:.7rem; } }
+@media (max-width:520px) { .container { width:min(100% - 1.35rem,1100px); }.hero { padding:3.5rem 0 3rem; }.section { padding:2.75rem 0; }.contact-form,.footer-content { grid-template-columns:1fr; }.contact-form label,.contact-form .button,.form-message,.footer-content>p { grid-column:auto; } }
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; }*,*::before,*::after { transition-duration:.01ms!important; animation-duration:.01ms!important; animation-iteration-count:1!important; } }
+
+/* Legacy styles no longer used.
 html.light {
   color-scheme: light;
   --bg: #f6f8ff;
@@ -785,3 +807,4 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
+*/
