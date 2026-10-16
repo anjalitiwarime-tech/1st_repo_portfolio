@@ -901,15 +901,27 @@ const go = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smoo
 
 function Header({ theme, setTheme }) {
   const [open, setOpen] = useState(false);
-  const pick = (id) => { go(id); setOpen(false); };
+  const [active, setActive] = useState('top');
+  const pick = (id) => { go(id); setOpen(false); setActive(id); };
+  useEffect(() => {
+    const targets = nav.map(([, id]) => document.getElementById(id)).filter(Boolean);
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      }),
+      { rootMargin: '-20% 0px -65% 0px', threshold: 0 },
+    );
+    targets.forEach((target) => observer.observe(target));
+    return () => observer.disconnect();
+  }, []);
   return <header className="site-header"><nav className="container nav" aria-label="Main navigation">
     <button className="brand" type="button" onClick={() => pick('top')}>AT</button>
-    <div className="desktop-nav">{nav.map(([label, id]) => <button type="button" key={id} onClick={() => pick(id)}>{label}</button>)}</div>
+    <div className="desktop-nav">{nav.map(([label, id]) => <button className={active === id ? 'active' : ''} type="button" key={id} onClick={() => pick(id)}>{label}</button>)}</div>
     <div className="nav-actions">
       <button className="icon-button" type="button" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} aria-label="Toggle theme">{theme === 'light' ? <FaMoon /> : <FaSun />}</button>
       <button className="menu-button" type="button" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Toggle navigation">{open ? <FaTimes /> : <FaBars />}</button>
     </div>
-    {open && <div className="mobile-nav">{nav.map(([label, id]) => <button type="button" key={id} onClick={() => pick(id)}>{label}</button>)}</div>}
+    {open && <div className="mobile-nav">{nav.map(([label, id]) => <button className={active === id ? 'active' : ''} type="button" key={id} onClick={() => pick(id)}>{label}</button>)}</div>}
   </nav></header>;
 }
 
